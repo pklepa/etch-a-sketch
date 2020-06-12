@@ -1,0 +1,91 @@
+#modal {
+    background-color: #000000df;
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 600ms;
+}
+
+#modal.hide {
+    display: none;
+}
+
+#modal .content {
+    color: white;
+
+    width: 420px;
+}
+
+#modal .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 48px;
+}
+
+#modal .header h1 {
+    color: white;
+
+    font-size: 26px;
+    line-height: 30px;
+}
+
+#modal .header a {
+    background-image: url("../assets/x.svg");
+
+    width: 20px;
+    height: 20px;
+
+    transform: scale(1.2);
+
+    display: flex;
+
+    font-size: 0.01px;
+}
+
+#modal .body p {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+#modal .body ul {
+    font-size: 16px;
+    line-height: 1.5em;
+    text-align: center;
+
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#modal .body h2 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+#modal .body .finalScore {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+
+    margin: 10px;
+}
+
+#modal .body li {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5em;
+
+    float: left;
+
+    list-style-type: none;
+}

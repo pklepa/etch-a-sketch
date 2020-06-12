@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/modal.css">
 </head>
 
 <body>
@@ -21,8 +22,8 @@
                 <h1>Etch-a-Sketch</h1>
             </div>
             <div class="links">
-                <a href="#">About</a>
-                <a href="#">Help</a>
+                <a id='about' href="#">About</a>                
+                <a id='help' href="#">Help</a>
             </div>
         </header>
 
@@ -53,7 +54,21 @@
                 <p>more projects like this: <a href="https://github.com/pklepa">https://github.com/pklepa</a></p>        
             </div>
         </footer>
-    </div>       
+    </div>      
+    
+
+    <div class="hide" id="modal">
+        <div class="content">
+            <div class="header">
+                <h1></h1>
+                <a href="#">Close</a>
+            </div>
+            <div class="body">
+                <p></p>            
+            </div>
+        </div>
+    </div>
+
 
     <script src="scripts/main.js"></script>
 </body>
