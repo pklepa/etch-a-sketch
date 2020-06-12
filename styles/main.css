@@ -129,20 +129,15 @@ main {
 
 
 
-.grid {    
-    display: grid;
-    grid-template-columns: repeat(8, minmax(10px, 10vw));
-
+.grid {
     width: 640px;
     height: 640px;
     
-    gap: 2px;
+    gap: 1px;
     background-color: whitesmoke;
 }
 
 .grid .grid-item {
-    min-width: 30px;
-    min-height: 30px;
     background-color: #dedede;
 
     transition: 200ms;

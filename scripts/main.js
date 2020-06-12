@@ -1,8 +1,9 @@
 // ..:: MAIN SCRIPT ::..
 
 // - Global Variables
-const gridContainer = document.querySelector('.grid');
-const gridSize = document.getElementById('grid-size');
+let gridContainer = document.querySelector('.grid');
+const gridSizeInput = document.getElementById('grid-size');
+let currentResolution = Number(gridSizeInput.value);
 
 const coloringTypes = {
     default: '#dedede;',
@@ -17,7 +18,7 @@ let currentColoring = {
 
 
 // - Prepare the default environment
-adjustGridSize();
+createDefaultGrid();
 
 
 // - Event Listeners
@@ -62,6 +63,8 @@ document.getElementById('btn-reset').addEventListener('click', () => {
     }
 });
 
+gridSizeInput.addEventListener('change', adjustGridSize);
+
 
 
 
@@ -78,9 +81,12 @@ function gridItemHover(event) {
     
 }
 
-function adjustGridSize() {
+function createDefaultGrid() {
+    gridContainer.style.display = 'grid';
+    gridContainer.style.gridTemplateColumns = 'repeat(8, minmax(10px, 10vw))'
 
-    for (let i = 0; i < gridSize.value ** 2; i++) {
+
+    for (let i = 0; i < currentResolution ** 2; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
 
@@ -89,6 +95,69 @@ function adjustGridSize() {
         gridContainer.appendChild(gridItem);
     }
 }
+
+
+// function adjustGridSize() {
+//     let itemWidth = getWidth(gridContainer)/gridSizeInput;
+//     let itemHeight = getHeight(gridContainer)/gridSizeInput;
+
+//     let newGridContainer = document.createElement('div');
+//     newGridContainer.classList.add('grid');
+//     newGridContainer.id = 'grid-container'
+
+//     for (let i = 0; i < currentResolution ** 2; i++) {
+//         let gridItem = document.createElement('div');
+//         gridItem.className = 'grid-item';
+//         gridItem.style.width = `${itemWidth}px;`;
+//         gridItem.style.height = `${itemHeight}px`;
+//         gridItem.addEventListener('mouseover', gridItemHover);
+
+//         newGridContainer.appendChild(gridItem);
+//     }
+
+//     // newGridContainer.style.backgroundColor = `red`;
+//     // gridContainer.style.gridTemplateColumns = `repeat(${currentResolution}, ${itemWidth}px);`;
+//     // gridContainer.style.gridTemplateRows = `repeat(${currentResolution}, ${itemHeight}px)`
+//     gridContainer.replaceWith(newGridContainer);
+//     // gridContainer.style.gridTemplateRows = `repeat(9, minmax(10px, 10vw));`;
+//     document.getElementById('grid-container').style.gridTemplateColumns = `auto auto auto auto;`;
+
+// }
+
+function adjustGridSize() {
+    oldResolution = currentResolution;
+    currentResolution = Number(gridSizeInput.value);
+    
+    gridContainer.style.gridTemplateColumns = `repeat(${ currentResolution }, minmax(5px, 320px))`
+    gridContainer.style.gridTemplateRows = `repeat(${ currentResolution }, minmax(5px, 320px)`
+
+    // If the resolution change is positive, add the right amount of items
+    if (currentResolution > oldResolution) {
+        let endIndex = (currentResolution**2) - (oldResolution**2);
+        console.log(endIndex)
+        for (let i = 0; i < endIndex; i++) {
+            let gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            gridItem.addEventListener('mouseover', gridItemHover);      
+
+            gridContainer.appendChild(gridItem);
+        }
+
+    } 
+    // Else, if the resolution change is negative, remove the right amout of items
+    else if (currentResolution < oldResolution) {
+        let endIndex = (oldResolution**2) - (currentResolution**2);
+        for (let i = 0; i < endIndex; i++) {
+            gridContainer.removeChild(gridContainer.lastElementChild);
+        }
+
+    }
+
+    
+}
+
+
+
 
 // - Helper Functions
 
