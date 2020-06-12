@@ -46,3 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* My modifications */
+* {
+	box-sizing: border-box;
+    outline: none;
+}
+
+a {
+	text-decoration: none;
+}

@@ -4,20 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Etch-a-Scketch</title>
+    <title>Etch-a-Sketch</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
-    <main>
+    <div class="#page-home">
 
-    <div class="grid">
+        <header>
+            <div class="title">
+                <h1>Etch-a-Sketch</h1>
+            </div>
+            <div class="links">
+                <a href="#">About</a>
+                <a href="#">Help</a>
+            </div>
+        </header>
 
-    </div>
-    
-    </main>
+        <main>         
+            <div class="container">
+                
+                <div class="grid">
+                </div>
+
+                <div class="toolbar">
+                    <button class="active" id="btn-black">Black</button>
+                    <button id="btn-eraser">Eraser</button>
+                    <button id="btn-rainbow">Rainbow</button>
+                    <button id="btn-reset">Reset</button>
+ 
+                    <div class="grid-size-div">
+                        <label for="grid-size">Grid Size</label>
+                        <input type="number" name="grid-size" id="grid-size" value="8">
+                    </div>
+                </div>
+
+            </div>   
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>more projects like this: <a href="https://github.com/pklepa">https://github.com/pklepa</a></p>        
+            </div>
+        </footer>
+    </div>       
 
     <script src="scripts/main.js"></script>
 </body>

@@ -1,0 +1,170 @@
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+body{
+    position: relative;
+
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #ffffff;
+
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+header {
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #333333;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 60px;
+    padding: 0 80px;
+}
+
+header .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    font-size: 20px;    
+    margin-left: 16px;
+}
+
+
+
+main {
+    display: flex;
+
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 80px 160px 40px;
+}
+
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.toolbar button {
+    margin: 0 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    background-color: transparent;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    padding: 10px 15px 10px;
+
+    transition: 200ms;
+}
+
+.toolbar button#btn-black:hover,
+.toolbar button.active
+ {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+
+.toolbar button#btn-eraser:hover,
+.toolbar button#btn-eraser.active
+ {
+    color: darkgray;
+    border-color: #dedede;
+    font-weight: bold;
+    background-color: #dedede;
+}
+
+.toolbar button#btn-rainbow:hover,
+.toolbar button#btn-rainbow.active
+ {
+    color: white;
+    font-weight: bold;
+    border-color: white;
+    background: -webkit-linear-gradient(left, rgb(221, 158, 41) , rgb(252, 231, 46), rgb(53, 177, 15), rgb(52, 208, 255), rgb(32, 81, 241), violet);
+}
+
+
+.toolbar .grid-size-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    height: 40px;
+}
+
+.toolbar .grid-size-div input, 
+.toolbar .grid-size-div label {
+    margin-left: 20px;
+}
+
+.toolbar input#grid-size {
+    margin-top: 5px;
+    width: 80px;
+
+    padding-left: 5px;
+}
+
+
+
+
+.grid {    
+    display: grid;
+    grid-template-columns: repeat(8, minmax(10px, 10vw));
+
+    width: 640px;
+    height: 640px;
+    
+    gap: 2px;
+    background-color: whitesmoke;
+}
+
+.grid .grid-item {
+    min-width: 30px;
+    min-height: 30px;
+    background-color: #dedede;
+
+    transition: 200ms;
+}
+
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    height: 40px;
+    width: 100%;
+
+    background-color: #706c61;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
