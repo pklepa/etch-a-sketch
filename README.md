@@ -1,6 +1,8 @@
 # etch-a-sketch
 [Odin] Recreation of the classic Etch-a-Sketch toy on browser
 
+> See it live on [pklepa.github.io/etch-a-sketch](https://pklepa.github.io/etch-a-sketch/)
+
 # objectives
 The main objective of this project is to familiarize and apply the following:
 - DOM manipulation with Javascript
